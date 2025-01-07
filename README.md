@@ -3,19 +3,14 @@
 </p>
 
 <h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
-
-
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: Azure Virtual Machines, Wireshark, and Network Security Groups](https://www.youtube.com)
+For this practice, I explored network traffic to and from Azure Virtual Machines using Wireshark and experimented with Network Security Groups (NSGs) to manage traffic flow. This hands-on lab gave me valuable insight into configuring cloud-based virtual machines and analyzing their network interactions. <br />
 
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Various Command-Line Tools
-- Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+- Remote Desktop Connection (RDP)
+- Command-Line Tools (Bash, PowerShell)
+- Network Protocols (SSH, RDP, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
 
 <h2>Operating Systems Used </h2>
@@ -25,33 +20,39 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+1. Set up Azure Virtual Machines (Windows and Linux).
+2. Configure Network Security Groups (NSGs) to define inbound and outbound rules.
+3. Connect to the Windows Virtual Machine via RDP and the Linux Virtual Machine via SSH.
+4. Install Wireshark on the Windows Virtual Machine to observe and analyze network traffic.
+5. Test and analyze network traffic using tools and protocols (ping, DNS requests, HTTP traffic, etc.).
+6. Document findings and refine NSG rules to enhance security.
 
 <h2>Actions and Observations</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Wireshark Traffic Capture"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+I captured traffic using Wireshark on the Windows Virtual Machine. The tool provided insights into various protocols, including ICMP, DNS, and HTTP. For instance, I initiated a ping command from the Windows VM to the Linux VM and observed the ICMP packets traveling between the two machines. This demonstrated the communication flow within the Azure network.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="NSG Configuration"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+To secure the environment, I configured NSG rules to allow only necessary traffic. For example, I permitted SSH traffic (port 22) to the Linux VM and RDP traffic (port 3389) to the Windows VM while blocking all other inbound traffic. This setup ensured that only authorized access was granted, reducing potential attack surfaces.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Traffic Analysis"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Using Wireshark, I analyzed HTTP traffic by accessing a web server hosted on the Linux VM. I observed the TCP handshake process and inspected the packets to verify the data flow. This exercise enhanced my understanding of web traffic and how it can be monitored for security and troubleshooting purposes.
 </p>
 <br />
+
+<h2>Conclusion</h2>
+This lab was an excellent opportunity to gain practical experience with cloud-based virtual machines, network traffic analysis, and security configuration using NSGs. By observing traffic in Wireshark and refining NSG rules, I developed a deeper understanding of managing and securing network environments in Azure. These skills are crucial for IT professionals working with cloud infrastructure and network security.
+
