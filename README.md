@@ -120,6 +120,3 @@
   and analyzing traffic with Wireshark. Observing how protocols like ICMP, SSH, DHCP, DNS, and RDP behave in a cloud 
   environment has strengthened my understanding of both networking and security best practices.
 </p>
-<p>
-  If you have any questions about this project, feel free to reach out or open an issue. Thank you for viewing!
-</p>
