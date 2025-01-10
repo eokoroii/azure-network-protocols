@@ -1,58 +1,125 @@
 <p align="center">
-<img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
+  <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
-<h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-For this practice, I explored network traffic to and from Azure Virtual Machines using Wireshark and experimented with Network Security Groups (NSGs) to manage traffic flow. This hands-on lab gave me valuable insight into configuring cloud-based virtual machines and analyzing their network interactions. <br />
+<h1>Azure Virtual Machines & Wireshark Network Analysis Lab</h1>
 
-<h2>Environments and Technologies Used</h2>
-
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop Connection (RDP)
-- Command-Line Tools (Bash, PowerShell)
-- Network Protocols (SSH, RDP, DNS, HTTP/S, ICMP)
-- Wireshark (Protocol Analyzer)
-
-<h2>Operating Systems Used </h2>
-
-- Windows 10 (21H2)
-- Ubuntu Server 20.04
-
-<h2>High-Level Steps</h2>
-
-1. Set up Azure Virtual Machines (Windows and Linux).
-2. Configure Network Security Groups (NSGs) to define inbound and outbound rules.
-3. Connect to the Windows Virtual Machine via RDP and the Linux Virtual Machine via SSH.
-4. Install Wireshark on the Windows Virtual Machine to observe and analyze network traffic.
-5. Test and analyze network traffic using tools and protocols (ping, DNS requests, HTTP traffic, etc.).
-6. Document findings and refine NSG rules to enhance security.
-
-<h2>Actions and Observations</h2>
-
+<h2>Project Summary</h2>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Wireshark Traffic Capture"/>
+  This lab demonstrates how I created Windows and Linux virtual machines in Microsoft Azure, 
+  configured Network Security Groups (NSGs), and captured various types of network traffic 
+  (ICMP, SSH, DHCP, DNS, RDP/TLS) using Wireshark. These hands-on tasks helped me understand 
+  cloud-based infrastructure and secure data transmission in real time.
 </p>
-<p>
-I captured traffic using Wireshark on the Windows Virtual Machine. The tool provided insights into various protocols, including ICMP, DNS, and HTTP. For instance, I initiated a ping command from the Windows VM to the Linux VM and observed the ICMP packets traveling between the two machines. This demonstrated the communication flow within the Azure network.
-</p>
-<br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="NSG Configuration"/>
-</p>
-<p>
-To secure the environment, I configured NSG rules to allow only necessary traffic. For example, I permitted SSH traffic (port 22) to the Linux VM and RDP traffic (port 3389) to the Windows VM while blocking all other inbound traffic. This setup ensured that only authorized access was granted, reducing potential attack surfaces.
-</p>
-<br />
+<ul>
+  <li><strong>Languages Used:</strong> PowerShell (ping, ipconfig), Bash (ls, whoami)</li>
+  <li><strong>Environments:</strong> 
+    <ul>
+      <li>Azure Portal (Resource Groups, VMs)</li>
+      <li>Windows 10 VM (RDP access, Wireshark)</li>
+      <li>Linux (Ubuntu 22.04) VM (SSH connections)</li>
+    </ul>
+  </li>
+  <li><strong>Technologies/Services:</strong>
+    <ul>
+      <li>Azure Resource Groups & Virtual Networks</li>
+      <li>Azure Virtual Machines (Windows & Linux)</li>
+      <li>Wireshark for packet capture</li>
+      <li>RDP (Remote Desktop Protocol)</li>
+      <li>SSH (Secure Shell)</li>
+    </ul>
+  </li>
+</ul>
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Traffic Analysis"/>
-</p>
-<p>
-Using Wireshark, I analyzed HTTP traffic by accessing a web server hosted on the Linux VM. I observed the TCP handshake process and inspected the packets to verify the data flow. This exercise enhanced my understanding of web traffic and how it can be monitored for security and troubleshooting purposes.
-</p>
-<br />
+<hr />
+
+<h2>Steps & Screenshots</h2>
+<ol>
+  <li>
+    <strong>Create an Azure Resource Group</strong><br />
+    I used the Azure portal to create a new Resource Group named <code>RG-Network-Activities</code> in East US 2. 
+    Organizing resources under one group makes it easier to manage and monitor costs.
+    <br /><br />
+    <img src="(SCREENSHOT #1)" alt="Resource Group Creation" width="600" />
+  </li>
+  <br />
+
+  <li>
+    <strong>Deploy Windows & Linux VMs</strong><br />
+    I deployed a Windows 10 VM and an Ubuntu 22.04 VM within the same resource group to simulate a real-world, multi-OS environment. 
+    This setup allowed me to test cross-platform network connectivity.
+    <br /><br />
+    <img src="(SCREENSHOT #2)" alt="Azure VM List" width="600" />
+  </li>
+  <br />
+
+  <li>
+    <strong>Remote Desktop to Windows VM & Wireshark Setup</strong><br />
+    After connecting via RDP, I installed Wireshark on the Windows VM to capture and analyze inbound and outbound traffic. 
+    This helped me visualize how different protocols operate in real time.
+    <br /><br />
+    <img src="(SCREENSHOT #3)" alt="RDP Connection" width="600" />
+    <br />
+    <img src="(SCREENSHOT #4)" alt="Wireshark Installation" width="600" />
+  </li>
+  <br />
+
+  <li>
+    <strong>Testing Connectivity (ICMP)</strong><br />
+    To confirm basic connectivity, I pinged the Linux VM and external sites like google.com. 
+    Wireshark’s ICMP capture allowed me to confirm successful packet exchanges.
+    <br /><br />
+    <img src="(SCREENSHOT #5)" alt="ICMP Traffic in Wireshark" width="600" />
+  </li>
+  <br />
+
+  <li>
+    <strong>Configuring NSG Rules</strong><br />
+    I fine-tuned the inbound rules on each VM to either permit or block ICMP and SSH. 
+    Observing blocked pings (ICMP) in Wireshark highlighted the impact of network security settings.
+    <br /><br />
+    <img src="(SCREENSHOT #6)" alt="NSG Rules" width="600" />
+    <br />
+    <img src="(SCREENSHOT #7)" alt="ICMP Blocked" width="600" />
+  </li>
+  <br />
+
+  <li>
+    <strong>SSH into Linux VM</strong><br />
+    From the Windows VM, I used PowerShell to SSH into the Linux VM, capturing the encrypted session in Wireshark. 
+    This demonstrated how SSH secures data in transit.
+    <br /><br />
+    <img src="(SCREENSHOT #8)" alt="SSH Capture in Wireshark" width="600" />
+  </li>
+  <br />
+
+  <li>
+    <strong>DHCP & DNS Analysis</strong><br />
+    I ran <code>ipconfig /renew</code> on the Windows VM to visualize the DHCP request and response cycle, 
+    then performed <code>nslookup</code> to observe DNS queries and answers in Wireshark.
+    <br /><br />
+    <img src="(SCREENSHOT #9)" alt="DHCP and DNS in Wireshark" width="600" />
+  </li>
+  <br />
+
+  <li>
+    <strong>Analyzing RDP/TLS Traffic</strong><br />
+    Lastly, I filtered Wireshark by port 3389 to examine the encrypted RDP traffic, 
+    confirming that remote desktop sessions are secured with TLS.
+    <br /><br />
+    <img src="(SCREENSHOT #10)" alt="RDP/TLS in Wireshark" width="600" />
+  </li>
+</ol>
+
+<hr />
 
 <h2>Conclusion</h2>
-This lab was an excellent opportunity to gain practical experience with cloud-based virtual machines, network traffic analysis, and security configuration using NSGs. By observing traffic in Wireshark and refining NSG rules, I developed a deeper understanding of managing and securing network environments in Azure. These skills are crucial for IT professionals working with cloud infrastructure and network security.
-
+<p>
+  Through this lab, I gained valuable insights into deploying Azure Virtual Machines, setting up Network Security Groups, 
+  and analyzing traffic with Wireshark. Observing how protocols like ICMP, SSH, DHCP, DNS, and RDP behave in a cloud 
+  environment has strengthened my understanding of both networking and security best practices.
+</p>
+<p>
+  If you have any questions about this project, feel free to reach out or open an issue. Thank you for viewing!
+</p>
