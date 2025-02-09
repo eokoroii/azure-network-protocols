@@ -35,7 +35,7 @@
     I logged into the Azure portal and created a new Resource Group named <code>RG-Network-Activities</code>.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=RG+Creation" alt="Resource Group Creation" width="600" />
+      <img src="https://i.imgur.com/0J3aNzz.png" alt="Resource Group Creation" width="600" />
       <br />
       <em>Figure 1.1 – Creating a Resource Group in Azure.</em>
     </p>
@@ -50,7 +50,7 @@
       <li>Enabled RDP (port 3389) under inbound rules</li>
     </ul>
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Windows+VM+Creation" alt="Windows VM creation" width="600" />
+      <img src="https://i.imgur.com/twwJSC4.png" alt="Windows VM creation" width="600" />
       <br />
       <em>Figure 1.2 – Windows VM basics.</em>
     </p>
@@ -66,7 +66,8 @@
       <li>Chose a lightweight size (e.g., Standard B1s) for cost efficiency</li>
     </ul>
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=Ubuntu+VM+Creation" alt="Ubuntu VM creation" width="600" />
+      <img src="https://i.imgur.com/SrHc7KH.png" alt="Ubuntu VM creation" width="600" />
+      <img src="https://i.imgur.com/I80wgDG.png" alt="Ubuntu VM creation" width="600" />
       <br />
       <em>Figure 1.3 – Linux VM in the same resource group.</em>
     </p>
@@ -82,7 +83,7 @@
       <li>Optionally allowed/blocked ICMP by adding a custom rule</li>
     </ul>
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=NSG+Rules" alt="Network Security Groups" width="600" />
+      <img src="https://i.imgur.com/rNs9PkR.png" alt="Network Security Groups" width="600" />
       <br />
       <em>Figure 1.4 – Reviewing inbound rules in NSG.</em>
     </p>
@@ -95,11 +96,11 @@
     and installed Wireshark. This is crucial for capturing real-time network traffic.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=RDP+Connection" alt="RDP Connection" width="600" />
+      <img src="https://i.imgur.com/uQN35ca.png" alt="RDP Connection" width="600" />
       <br />
       <em>Figure 1.5 – Remoting into the Windows VM.</em>
       <br /><br />
-      <img src="https://via.placeholder.com/600x350.png?text=Wireshark+Install" alt="Wireshark Installation" width="600" />
+      <img src="https://i.imgur.com/7kYHzoq.png" alt="Wireshark Installation" width="600" />
       <br />
       <em>Figure 1.6 – Installing Wireshark.</em>
     </p>
@@ -112,7 +113,7 @@
     then pinged both the Linux VM and <code>google.com</code>. 
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=ICMP+Wireshark" alt="ICMP Capture" width="600" />
+      <img src="https://i.imgur.com/tMkfAKi.png" alt="ICMP Capture" width="600" />
       <br />
       <em>Figure 1.7 – Observing ICMP echo requests and replies.</em>
     </p>
@@ -125,7 +126,7 @@
     Wireshark shows encrypted SSH packets on port 22.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=SSH+In+Wireshark" alt="SSH in Wireshark" width="600" />
+      <img src="https://i.imgur.com/8oqwJLK.png" alt="SSH in Wireshark" width="600" />
       <br />
       <em>Figure 1.8 – SSH traffic captured as encrypted packets.</em>
     </p>
@@ -138,11 +139,11 @@
     Then I ran <code>nslookup</code> to capture DNS queries and responses.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=DHCP+Traffic" alt="DHCP Flow" width="600" />
+      <img src="https://i.imgur.com/PNShEwL.png" alt="DHCP Flow" width="600" />
       <br />
       <em>Figure 1.9 – DHCP handshake sequence in Wireshark.</em>
       <br /><br />
-      <img src="https://via.placeholder.com/600x350.png?text=DNS+Traffic" alt="DNS Queries" width="600" />
+      <img src="https://i.imgur.com/1HmASlm.png" alt="DNS Queries" width="600" />
       <br />
       <em>Figure 1.10 – DNS queries and responses.</em>
     </p>
@@ -155,7 +156,7 @@
     This confirmed RDP is encapsulated via TLS for security.
     <br /><br />
     <p align="center">
-      <img src="https://via.placeholder.com/600x350.png?text=RDP+TLS" alt="RDP TLS" width="600" />
+      <img src="https://i.imgur.com/EtskZte.png" alt="RDP TLS" width="600" />
       <br />
       <em>Figure 1.11 – Encrypted RDP session traffic in Wireshark.</em>
     </p>
